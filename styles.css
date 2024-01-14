@@ -7,15 +7,15 @@
 }
 
 body {
-    background-color: #8A51FC;
+    background-color: #8A51FC; /* Mudo o fundo da tela */
 }
 
 .logo {
     width: 300px;
     margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    margin-left: auto; /*colocar em auto */
+    margin-right: auto; /*colocar em auto */
+    display: block; /* quando margins estiverem auto, e colocar display block fica centralizado */
 }
 
 main {
@@ -99,7 +99,7 @@ section {
 
 }
 
-.currency-value {
+.currency-value, .currency-value-to-convert {
     font-size: 20px;
     font-weight: 700;
     color: #555555;
