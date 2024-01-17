@@ -10,6 +10,12 @@ function converterValues() {  //Criacao da função
 
     const dolarToday = 5.2 //variavel com o valor do Dolar fictício
     const euroToday = 6.20
+    const libraToday = 6.26
+    const bitcoinToday = 210552.05
+
+
+
+
 
 
     if (currencySelect.value == "dolar") {
@@ -27,6 +33,23 @@ function converterValues() {  //Criacao da função
         }).format(inputCurrencyValue / euroToday) //.format eu menciono a varial que quero converter
         
     }
+
+    if (currencySelect.value == "libra") {
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-GB", {
+            style: "currency", //estilo que quero mudar, no caso é uma moeda
+            currency: "GBP" //modelo de moeda que quero converter
+        }).format(inputCurrencyValue / libraToday) //.format eu menciono a varial que quero converter
+        
+    }
+    
+    if (currencySelect.value == "bitcoin") {
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency", //estilo que quero mudar, no caso é uma moeda
+            currency: "BTC" //modelo de moeda que quero converter
+        }).format(inputCurrencyValue / bitcoinToday) //.format eu menciono a varial que quero converter
+
+    }
+
 
     //Formatação de moeda para BRL 
     currencyValueToConverted.innerHTML = new Intl.NumberFormat("pt-BR", {
@@ -55,11 +78,17 @@ function changeCurrency() {
         currencyImg.src = "./assets/euro.png" //muda imagem para bandeira do euro
     }
 
-    converterValues()
+    if(currencySelect.value == "libra") {
+        currencyOption.innerHTML = "Libra" //muda escrita para Euro
+        currencyImg.src = "./assets/libra.png" //muda imagem para bandeira do euro
+    }
+
+    if(currencySelect.value == "bitcoin") {
+        currencyOption.innerHTML = "Bitcoin" //muda escrita para Euro
+        currencyImg.src = "./assets/bitcoin.png" //muda imagem para bandeira do euro
+    }
+    
 }
 
 currencySelect.addEventListener("change", changeCurrency) //valida quando troco a moeda
 converterButton.addEventListener("click", converterValues) //valida se o click esta pegando, dpois de criar a variavel
-
-
-
