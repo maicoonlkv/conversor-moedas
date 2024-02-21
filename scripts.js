@@ -13,11 +13,9 @@ const converterValues =  async() =>  {  //Criacao da função
 
     const dolarToday = data.USDBRL.high
     const euroToday = data.EURBRL.high
-    //const libraToday = 6.26
-    //const bitcoinToday = 210552.05
-    //const realToday = 1
-
-    
+    const libraToday = 6.26
+    const bitcoinToday = 210552.05
+    const realToday = 1
 
     if (currencySelect.value == "dolar") {
         currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
